@@ -1,10 +1,9 @@
 const net = require('net');
-const port = 777;
-const host = '127.0.0.1';
+const config  = require("./config.json") 
 
 const server = net.createServer();
-server.listen(port, host, () => {
-    console.log('Servidor rodando na porta ' + port + '.');
+server.listen(config.port, config.ip, () => {
+    console.log('Servidor rodando na porta ' + config.port + '.');
 });
 
 let sockets = [];
